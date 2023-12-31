@@ -1,6 +1,8 @@
 import React from "react";
-import prisma from "../prisma";
+import { PrismaClient } from "@prisma/client";
 import PostCard from "./PostCard";
+
+const prisma = new PrismaClient();
 
 type Props = {};
 
