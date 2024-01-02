@@ -12,6 +12,7 @@ export const Button = (props: Props) => {
   if (session) {
     return (
       <button
+        className="p-4 cursor"
         onClick={(e) => {
           e.preventDefault();
           signOut();
@@ -22,5 +23,9 @@ export const Button = (props: Props) => {
     );
   }
 
-  return <div onClick={() => signIn()}>Sign In!</div>;
+  return (
+    <div onClick={() => signIn()} className="p-4">
+      Sign INN
+    </div>
+  );
 };
