@@ -23,11 +23,19 @@ export const PostsList = (props: PostListProps) => {
             className="p-0.5 font-mono block bg-white cursor-pointer border-2 rounded-md neo-shadow focus:shadow-none focus:translate-x-1 focus:translate-y-1 transform transition-shadow duration-100"
           >
             <article className="w-full h-full">
-              <figure className="w-full h-20 md:h-30 h-72 border-b-2">
+              <figure className="w-full h-20 md:h-30 lg:h-72 border-b-2">
                 {post.imgURL ? (
-                  <img src={post.imgURL} />
+                  <img
+                    src={post.imgURL}
+                    alt="thumbnail"
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
-                  <img src={post.imgURL} alt="thumbnail" />
+                  <img
+                    src="/logo2.png"
+                    alt="thumbnail"
+                    className="w-full h-full object-cover"
+                  />
                 )}
               </figure>
             </article>
