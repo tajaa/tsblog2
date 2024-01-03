@@ -5,11 +5,17 @@ import { createPost } from "@/app/actions/publishedPost";
 
 type Props = {};
 
+//you need to import our styles fo the button to look right
+import "@uploadthing/react/styles.css";
+
+import { UploadButton } from "../../utils/uploadthing";
+
 const NewBlogForm = (props: Props) => {
   const { data: session } = useSession();
 
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const [thumbnail, setThumbnail] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   if (!session && status !== "loading")
@@ -21,7 +27,12 @@ const NewBlogForm = (props: Props) => {
 
     if (!userId) return;
     try {
-      const post = await createPost({ title, content, authorId: userId });
+      const post = await createPost({
+        title,
+        content,
+        authorId: userId,
+        imgURL: thumbnail,
+      });
       setSubmitted(true);
     } catch (error) {
       console.log(error);
@@ -50,6 +61,23 @@ const NewBlogForm = (props: Props) => {
           onChange={(e) => setContent(e.target.value)}
           className="flex-1 text-xl mt-2 bg-black text-white px-1 py-1 rounded-md font-mono"
           placeholder="ideas here..."
+        />
+        <label className="text-slate-600 mb-2">
+          Add a thumbnail image (optional)
+        </label>
+        <UploadButton
+          endpoint="imageUploader"
+          onClientUploadComplete={(res) => {
+            // Do something with the response
+            console.log("Files: ", res);
+            if (res) {
+              setThumbnail(res[0].url);
+            }
+          }}
+          onUploadError={(error: Error) => {
+            // Do something with the error.
+            alert(`ERROR! ${error.message}`);
+          }}
         />
         <button
           type="submit"

@@ -33,6 +33,7 @@ const page = async ({
             ></div>
           </div>
           <p className="font-mono text-black">{post.content}</p>
+          <p>{post.imgURL}</p>
         </>
       )}
     </div>
