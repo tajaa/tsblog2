@@ -19,7 +19,7 @@ const page = async ({
   console.log(post);
 
   return (
-    <div className="container mt-6">
+    <div className="container-sm mt-6">
       {post && (
         <>
           <h1 className="text-4xl font-mono mb-5">{post.title}</h1>
