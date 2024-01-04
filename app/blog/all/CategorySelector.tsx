@@ -12,7 +12,7 @@ type CategorySelectorPropsWithState = CategorySelectorProps & {
 export const CategorySelector = (props: CategorySelectorPropsWithState) => {
   const bgClasses = ["bg-slate-400", "bg-slate-600", "bg-slate-800"];
   return (
-    <div className="flex flex-wrap justify-center my-4">
+    <div className="flex flex-wrap flex-col justify-center my-4">
       {props.categories.map((category, index) => (
         <button
           key={category.id}
@@ -24,6 +24,15 @@ export const CategorySelector = (props: CategorySelectorPropsWithState) => {
           {category.name}
         </button>
       ))}
+      {props.selectedCategoryId ? (
+        <button
+          key="remove selection"
+          onClick={() => props.selectCategory(null)}
+          className="cursor-pointer underline"
+        >
+          Remove Selection
+        </button>
+      ) : null}
     </div>
   );
 };
