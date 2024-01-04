@@ -10,8 +10,8 @@ const Header = (props: Props) => {
   return (
     <SessionProvider>
       <div className="border-b border-white bg-black text-white flex justify-between">
-        <Link href="/" className="text-4xl px-2 py-4 font-mono">
-          LOGO
+        <Link href="/" className="text-4xl px-2 py-4 font-mono ml-2">
+          CMPRSN
         </Link>
         <AuthButton />
       </div>

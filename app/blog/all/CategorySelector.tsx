@@ -30,7 +30,7 @@ export const CategorySelector = (props: CategorySelectorPropsWithState) => {
         <button
           key="remove selection"
           onClick={() => props.selectCategory(null)}
-          className="cursor-pointer underline"
+          className="cursor-pointer underline font-mono text-amber-500"
         >
           Remove Selection
         </button>
