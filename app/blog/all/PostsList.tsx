@@ -23,7 +23,7 @@ export const PostsList = (props: PostListProps) => {
             className="p-0.5 font-mono block bg-white cursor-pointer border-2 rounded-md neo-shadow focus:shadow-none focus:translate-x-1 focus:translate-y-1 transform transition-shadow duration-100"
           >
             <article className="w-full h-full">
-              <figure className="w-full h-20 md:h-30 lg:h-72 border-b-2">
+              <figure className="w-full h-30 md:h-40 lg:h-72 border-b-2">
                 {post.imgURL ? (
                   <img
                     src={post.imgURL}
@@ -39,7 +39,14 @@ export const PostsList = (props: PostListProps) => {
                 )}
               </figure>
             </article>
-            {post.title}
+            <div className="px-2 py-2 text-left h-full">
+              <p className="text-xs mb-2 text-slate-500">
+                {post.createdAt.toLocaleString()}
+              </p>
+              <h1 className="text-[25px] mb-4">{post.title}</h1>
+              <p className="text-xs line-clamp-2">{post.content}</p>
+              <p className="text-sm text-amber-500">Read More</p>
+            </div>
           </Link>
         </div>
       ))}
