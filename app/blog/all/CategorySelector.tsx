@@ -9,7 +9,7 @@ type CategorySelectorPropsWithState = CategorySelectorProps & {
   selectedCategoryId: number | null;
 };
 
-export const CategorySelector = (props: CategorySelectorProps) => {
+export const CategorySelector = (props: CategorySelectorPropsWithState) => {
   const bgClasses = ["bg-slate-400", "bg-slate-600", "bg-slate-800"];
   return (
     <div className="flex flex-wrap justify-center my-4">
