@@ -6,6 +6,25 @@ type Props = {};
 const NewsLetterSub = (props: Props) => {
   const [subscribed, setSubscribed] = useState<boolean>(false);
 
+  async function create(formData: formData) {
+    const email = formData.get("email");
+    await fetch("/api/beehiv", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.status == 200) {
+          setSubscribed(true);
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+
   if (subscribed)
     return (
       <div>
@@ -14,7 +33,7 @@ const NewsLetterSub = (props: Props) => {
     );
 
   return (
-    <form>
+    <form action={create}>
       <div>
         <input
           type="email"

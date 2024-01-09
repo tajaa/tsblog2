@@ -17,7 +17,7 @@ const CalloutSection = () => {
           </p>
           <NewsLetterSub />
         </div>
-        <div className="col-span-4 rounded-full border-2 w-[150px] h-[150px] md:w-[300px] md:h-[300px] relative self-cnter">
+        <div className="col-span-4 rounded-full border-2 w-[150px] h-[150px] md:w-[240px] md:h-[240px] relative self-center ml-8">
           <Image
             src="/logo2.png"
             alt="avatar"
