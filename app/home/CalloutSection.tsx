@@ -14,8 +14,8 @@ const CalloutSection = () => {
             our curated articles, ranging from bite-sized pieces to in-depth
             features. Perfect for busy users who want to stay informed on the go
             and for those who preer to dive deep into a topic.
-            <NewsLetterSub />
           </p>
+          <NewsLetterSub />
         </div>
         <div className="col-span-4 rounded-full border-2 w-[150px] h-[150px] md:w-[300px] md:h-[300px] relative self-cnter">
           <Image
