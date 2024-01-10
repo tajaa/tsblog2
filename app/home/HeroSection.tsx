@@ -5,7 +5,7 @@ type Props = {};
 
 const HeroSection = (props: Props) => {
   return (
-    <div className="border-b-4 p-1 mt-2 rounded-lg bg-teal-700">
+    <div className="border-b-4 p-1 mt-2 mb-3 rounded-lg bg-teal-700">
       <section className="grid container grid-cols-1 sm:grid-cols-12 text-white mt-6">
         <div className="col-span-7">
           <h1 className="text-2xl font-mono sm:text-4xl md:text-5xl md:leading-normal">

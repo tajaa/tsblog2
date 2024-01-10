@@ -11,7 +11,7 @@ const Header = (props: Props) => {
     <SessionProvider>
       <div className="border-b border-white bg-black text-white flex justify-between">
         <Link href="/" className="text-4xl px-2 py-4 font-mono ml-2">
-          CMPRSN
+          Remote-Node
         </Link>
         <Link href="/blog/new" className="px-2 mt-9 font-mono text-teal-300">
           Write A Post{" "}
